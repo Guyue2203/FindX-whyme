@@ -14,37 +14,52 @@
       color: #1e293b;
       line-height: 1.8;
     }
-    .container { max-width: 750px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
     header { text-align: center; margin-bottom: 3rem; }
     header h1 { font-size: 3.5rem; font-weight: 700; color: #0f172a; }
     header h1::after { content: "X"; color: #c2410c; }
     header p { color: #475569; font-size: 1.2rem; margin-top: .5rem; }
 
+    /* Quote 特殊样式 */
     .quote {
       text-align: center;
       font-style: italic;
-      color: #64748b;
-      margin: 3rem auto;
-      padding: 1.8rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      font-size: 1.2rem;
-    }
-
-    .section {
-      background: #fff;
+      color: #334155;
+      margin: 4rem auto;
+      padding: 2.5rem;
+      background: linear-gradient(135deg, #fff 0%, #fef2f2 100%);
+      border-left: 6px solid #c2410c;
       border-radius: 14px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      padding: 2rem;
-      margin: 2.5rem 0;
-      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.9;
     }
-    .section h2 { font-size: 1.6rem; color: #0f172a; margin-bottom: 1rem; }
-    .section p, .section li { font-size: 1.05rem; color: #334155; margin: .6rem 0; }
-    .section ul { list-style: none; padding: 0; }
-    .section li::before { content: "• "; color: #c2410c; font-size: 1.2rem; }
 
+    /* 三列卡片 */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 4rem 0;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+    }
+    .card h2 { font-size: 1.4rem; color: #0f172a; margin-bottom: 1rem; }
+    .card p, .card li { font-size: 1.05rem; color: #475569; }
+    .card ul { list-style: none; padding: 0; margin: 0; }
+    .card li::before { content: "• "; color: #c2410c; font-weight: bold; }
+
+    /* 按钮 */
     .write-button { text-align: center; margin: 3rem 0; }
     .write-button a {
       padding: 1rem 2rem;
@@ -74,30 +89,37 @@
     </header>
 
     <section class="quote">
-      <p>Medicine, law, business, engineering, is noble pursuits and necessary to sustain life. But poetry, beauty, romance, love, hese are what we stay alive for. This is the path we are on. That' s what we' re looking for.<br/>医学，法律，商业，工程，都是崇高的追求，足以支撑人的一生。但诗歌，美丽，浪漫，爱，这就是我们活着的目的。“这就是生命的意义，是我们所要寻找的。”</p>
+      <p>
+        Medicine, law, business, engineering, is noble pursuits and necessary to sustain life. 
+        But poetry, beauty, romance, love, hese are what we stay alive for. 
+        This is the path we are on. That' s what we' re looking for.<br/><br/>
+        医学，法律，商业，工程，都是崇高的追求，足以支撑人的一生。<br>
+        但诗歌，美丽，浪漫，爱，这就是我们活着的目的。<br>
+        “这就是生命的意义，是我们所要寻找的。”
+      </p>
     </section>
 
-    <section class="section">
-      <h2>初心</h2>
-      <p>屏幕能照亮面庞，却照不进灵魂。<br>FindX 是一次回望真实的觉醒。</p>
-    </section>
-
-    <section class="section">
-      <h2>信念</h2>
-      <ul>
-        <li>真实的眼神胜过千次点赞</li>
-        <li>微小的触碰值得郑重记录</li>
-        <li>在洪流中，我们需要锚点</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>构建</h2>
-      <ul>
-        <li>静谧的生活花园</li>
-        <li>真实的生命叙事</li>
-        <li>温柔的心灵庇护所</li>
-      </ul>
+    <section class="cards">
+      <div class="card">
+        <h2>初心</h2>
+        <p>屏幕能照亮面庞，却照不进灵魂。<br>FindX 是一次回望真实的觉醒。</p>
+      </div>
+      <div class="card">
+        <h2>相信</h2>
+        <ul>
+          <li>真实的眼神胜过千次点赞</li>
+          <li>微小的触碰值得郑重记录</li>
+          <li>在洪流中，我们需要锚点</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>构建</h2>
+        <ul>
+          <li>静谧的生活花园</li>
+          <li>真实的生命叙事</li>
+          <li>温柔的心灵庇护所</li>
+        </ul>
+      </div>
     </section>
 
     <div class="write-button">
@@ -110,3 +132,4 @@
   </div>
 </body>
 </html>
+
