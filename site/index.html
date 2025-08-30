@@ -1,368 +1,110 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FindX 计划 | 从虚拟中醒来，走进真实生活</title>
+  <title>FindX | 从虚拟中醒来</title>
   <link rel="icon" type="image/png" href="https://s.guyue.me/img/icon_whyme.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-dark: #0f172a;
-      --primary-light: #f8fafc;
-      --accent: #c2410c;
-      --text-main: #1e293b;
-      --text-secondary: #475569;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --shadow: rgba(0, 0, 0, 0.08);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Noto Serif SC', serif;
+      margin: 0; padding: 0;
+      background: #f8fafc;
+      color: #1e293b;
       line-height: 1.8;
-      color: var(--text-main);
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      min-height: 100vh;
-      font-feature-settings: 'kern' 1, 'liga' 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-      position: relative;
     }
-
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 65vh;
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 0%, rgba(255,255,255,0) 100%);
-      z-index: -1;
-    }
-
-    .container {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 4rem 2rem 6rem;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 5rem;
-      padding-bottom: 3rem;
-      position: relative;
-    }
-
-    .header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    .header h1 {
-      font-family: 'Noto Serif SC', serif;
-      font-size: 4.5rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      position: relative;
-      display: inline-block;
-    }
-
-    .header h1::after {
-      content: "X";
-      color: var(--accent);
-    }
-
-    .header .subtitle {
-      font-size: 1.6rem;
-      color: var(--text-secondary);
-      font-weight: 300;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.02em;
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .header .description {
-      font-size: 1.15rem;
-      color: var(--text-light);
-      font-weight: 300;
-      max-width: 500px;
-      margin: 0 auto;
-      line-height: 1.9;
-      font-family: 'Noto Serif SC', serif;
-    }
+    .container { max-width: 750px; margin: 0 auto; padding: 3rem 1.5rem; }
+    header { text-align: center; margin-bottom: 3rem; }
+    header h1 { font-size: 3.5rem; font-weight: 700; color: #0f172a; }
+    header h1::after { content: "X"; color: #c2410c; }
+    header p { color: #475569; font-size: 1.2rem; margin-top: .5rem; }
 
     .quote {
       text-align: center;
       font-style: italic;
-      color: var(--text-light);
-      margin: 0 auto 5rem;
-      max-width: 600px;
-      padding: 2.5rem;
-      font-size: 1.3rem;
-      line-height: 1.9;
-      background: rgba(255, 255, 255, 0.7);
+      color: #64748b;
+      margin: 3rem auto;
+      padding: 1.8rem;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 5px 20px var(--shadow);
-      position: relative;
-      font-weight: 400;
-    }
-
-    .quote::before, .quote::after {
-      content: "“";
-      position: absolute;
-      font-size: 5rem;
-      color: var(--accent);
-      opacity: 0.15;
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .quote::before {
-      top: 0;
-      left: 15px;
-    }
-
-    .quote::after {
-      bottom: -30px;
-      right: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      font-size: 1.2rem;
     }
 
     .section {
-      margin-bottom: 4rem;
-      padding: 3rem 3rem;
-      background: white;
-      border-radius: 16px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin: 2.5rem 0;
       text-align: center;
-      box-shadow: 0 10px 30px var(--shadow);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      position: relative;
-      overflow: hidden;
     }
+    .section h2 { font-size: 1.6rem; color: #0f172a; margin-bottom: 1rem; }
+    .section p, .section li { font-size: 1.05rem; color: #334155; margin: .6rem 0; }
+    .section ul { list-style: none; padding: 0; }
+    .section li::before { content: "• "; color: #c2410c; font-size: 1.2rem; }
 
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    }
-
-    .section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--accent), #f59e0b);
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      margin-bottom: 2.5rem;
-      position: relative;
-      letter-spacing: 0.01em;
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 5rem;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .section p {
-      color: var(--text-main);
-      margin-bottom: 1.8rem;
-      font-weight: 400;
-      font-size: 1.15rem;
-      line-height: 1.9;
-      letter-spacing: 0.005em;
-      text-align: left;
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 500px;
-      text-align: left;
-    }
-
-    .section li {
-      color: var(--text-main);
-      margin-bottom: 1.5rem;
-      padding-left: 2rem;
-      font-weight: 400;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      letter-spacing: 0.005em;
-      position: relative;
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .section li::before {
-      content: "•";
-      color: var(--accent);
-      font-size: 1.8rem;
-      position: absolute;
-      left: 0;
-      top: -0.3rem;
-    }
-
-    .write-button {
-      text-align: center;
-      margin: 5rem auto 3rem;
-      position: relative;
-    }
-
+    .write-button { text-align: center; margin: 3rem 0; }
     .write-button a {
-      display: inline-block;
-      padding: 1.1rem 2.8rem;
-      background: var(--primary-dark);
-      color: white;
-      border-radius: 10px;
+      padding: 1rem 2rem;
+      background: #0f172a;
+      color: #fff;
       text-decoration: none;
-      font-size: 1.15rem;
-      transition: all 0.3s ease;
-      letter-spacing: 0.03em;
-      font-weight: 400;
-      font-family: 'Noto Sans SC', sans-serif;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
+      border-radius: 10px;
+      transition: 0.3s;
     }
+    .write-button a:hover { background: #c2410c; }
 
-    .write-button a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background: var(--accent);
-      transition: width 0.4s ease;
-      z-index: -1;
-    }
-
-    .write-button a:hover {
-      background: transparent;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(194, 65, 12, 0.25);
-    }
-
-    .write-button a:hover::before {
-      width: 100%;
-    }
-
-    .footer {
+    footer {
       text-align: center;
-      margin-top: 6rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-light);
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.02em;
-      font-family: 'Noto Sans SC', sans-serif;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 3rem 1.5rem 5rem;
-      }
-
-      .header h1 {
-        font-size: 3.2rem;
-      }
-      
-      .section {
-        padding: 2.5rem 1.8rem;
-      }
-      
-      .quote {
-        font-size: 1.15rem;
-        padding: 1.8rem;
-      }
-      
-      .section h2 {
-        font-size: 1.7rem;
-      }
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      color: #94a3b8;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <header>
       <h1>Find</h1>
-      <p class="subtitle">从虚拟中醒来，走进真实生活</p>
-      <p class="description">一场引导人们回归真实、重建感知与连接的生活觉醒计划</p>
+      <p>从虚拟中醒来 · 走进真实生活</p>
     </header>
 
     <section class="quote">
       <p>Medicine, law, business, engineering, is noble pursuits and necessary to sustain life. But poetry, beauty, romance, love, hese are what we stay alive for. This is the path we are on. That' s what we' re looking for.<br/>医学，法律，商业，工程，都是崇高的追求，足以支撑人的一生。但诗歌，美丽，浪漫，爱，这就是我们活着的目的。“这就是生命的意义，是我们所要寻找的。”</p>
     </section>
 
-    <main>
-      <section class="section">
-        <h2>计划初心</h2>
-        <p>在这个数字洪流奔涌的时代，我们逐渐成为信息的浮萍，在算法编织的河流中随波逐流。屏幕的光晕照亮脸庞，却照不进灵魂的深处；点赞的涟漪荡漾开去，却荡不起心灵的波澜。</p>
-        <p>FindX 是一场温柔的抵抗，一次对真实世界的深情回望。我们相信，真正的连接不在云端，而在目光交汇的瞬间；生活的质感不在像素里，而在指尖触碰的温度中。</p>
-        <p>这里的"X"，是你灵魂深处尚未命名的渴望，是晨雾中若隐若现的轮廓，是生命拼图中遗失的那一块。它可能是梧桐叶飘落肩头的重量，也可能是陌生人眼中一闪而过的星光。</p>
-      </section>
+    <section class="section">
+      <h2>初心</h2>
+      <p>屏幕能照亮面庞，却照不进灵魂。<br>FindX 是一次回望真实的觉醒。</p>
+    </section>
 
-      <section class="section">
-        <h2>我们相信</h2>
-        <ul>
-          <li>每个人心中都沉睡着对真实世界的感知力</li>
-          <li>眼神交汇时的温度胜过千次点赞的回响</li>
-          <li>微小而具体的行动能唤醒沉睡的生命力</li>
-          <li>每一次对真实的触碰都值得被郑重记录</li>
-          <li>在数字洪流中，我们更需要心灵的锚点</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2>信念</h2>
+      <ul>
+        <li>真实的眼神胜过千次点赞</li>
+        <li>微小的触碰值得郑重记录</li>
+        <li>在洪流中，我们需要锚点</li>
+      </ul>
+    </section>
 
-      <section class="section">
-        <h2>我们正在构建</h2>
-        <ul>
-          <li>一个记录生活觉醒的静谧花园</li>
-          <li>真实而不喧嚣的生命叙事</li>
-          <li>基于深度理解的信任连接</li>
-          <li>来自真实世界的感官信笺</li>
-          <li>对抗数字异化的温柔庇护所</li>
-        </ul>
-      </section>
+    <section class="section">
+      <h2>构建</h2>
+      <ul>
+        <li>静谧的生活花园</li>
+        <li>真实的生命叙事</li>
+        <li>温柔的心灵庇护所</li>
+      </ul>
+    </section>
 
-      <div class="write-button">
-        <a href="mailto:findx@whyme.uno">开启你的觉醒之旅</a>
-      </div>
-    </main>
+    <div class="write-button">
+      <a href="mailto:findx@whyme.uno">写信给 FindX</a>
+    </div>
 
-    <footer class="footer">
+    <footer>
       © 2025 FindX · 微米工作室 | 在数字洪流中守护人性的微光
     </footer>
   </div>
